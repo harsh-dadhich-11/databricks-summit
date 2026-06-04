@@ -152,10 +152,11 @@
         }
 
         .nav-cta {
-            background: var(--orange);
-            color: #fff;
+            background: rgba(66, 195, 214, .1);
+            border: 1px solid rgba(66, 195, 214, .25);
+            color: var(--teal-mid);
             padding: .55rem 1.4rem;
-            border-radius: 6px;
+            border-radius: 100px;
             font-size: .82rem;
             font-weight: 700;
             text-decoration: none;
@@ -163,8 +164,8 @@
         }
 
         .nav-links a.nav-cta:hover {
-            background: #d4541a;
-            color: #fff;
+            background: rgba(66, 195, 214, .2);
+            color: var(--teal-dark);
             transform: translateY(-1px)
         }
 
@@ -380,15 +381,18 @@
         }
 
         .btn-primary {
-            background: var(--orange);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(241, 101, 34, .2)
+            background: rgba(66, 195, 214, .1);
+            border: 1px solid rgba(66, 195, 214, .25);
+            color: var(--teal-mid);
+            border-radius: 100px;
+            box-shadow: none;
         }
 
         .btn-primary:hover {
-            background: #d4541a;
+            background: rgba(66, 195, 214, .2);
+            color: var(--teal-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 28px rgba(241, 101, 34, .3)
+            box-shadow: 0 4px 15px rgba(66, 195, 214, .15);
         }
 
         .btn-outline {
@@ -1102,7 +1106,7 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#why">Why BOT</a>
-                <a href="#hosts">Hosts</a>
+                <a href="#hosts">Team</a>
                 <a href="javascript:void(0)" onclick="openHubspotModal(event)" class="nav-cta">Book On-Site
                     Meeting</a>
             </div>
@@ -1193,8 +1197,8 @@
     <!-- WHY -->
     <section id="why" class="section-center">
         <p class="section-label reveal">Why Meet BOT at Summit?</p>
-        <h2 class="section-title reveal reveal-d1">We're not building offshore teams.<br>We're building <span
-                style="color:var(--orange)">Databricks capability centers.</span></h2>
+        <h2 class="section-title reveal reveal-d1" style="max-width: 950px;">We're not building offshore teams.</br>
+            We're building <br><span style="color:var(--orange)">Databricks capability centers.</span></h2>
         <p class="section-desc reveal reveal-d2">As Databricks accelerates toward Data Intelligence and Agentic AI,
             we're helping firms build the capability required to keep pace. At BOT, we help high-growth Databricks
             partners scale globally aligned Data & AI teams through our Build–Operate–Transfer model.</p>
@@ -1350,12 +1354,10 @@
     <section class="cta-section" id="contact">
         <div class="section-label reveal">LET'S TALK</div>
         <h2 class="section-title reveal d1" style="max-width:650px">Databricks is accelerating the future of Data and
-            AI. We're helping partners build the teams required to keep pace — <span style="color:var(--orange)">Let's
-                connect at DAIS.</span></h2>
-        <p class="section-desc reveal d2">Book a time with our team at Databricks Data+AI Summit.</p>
+            AI.<br> We're helping partners build the teams required to keep pace.</h2>
         <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem" class="reveal d3">
-            <a href="javascript:void(0)" onclick="openHubspotModal(event)" class="btn btn-primary">Meet
-                us at Summit →</a>
+            <a href="javascript:void(0)" onclick="openHubspotModal(event)" class="btn btn-primary">Let's
+                connect at DAIS →</a>
         </div>
     </section>
 
