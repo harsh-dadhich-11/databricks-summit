@@ -1003,7 +1003,7 @@
         .trusted-section {
             text-align: center;
             padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 3rem);
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
@@ -1021,8 +1021,8 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 3rem 4rem;
-            max-width: 1100px;
+            gap: 3.5rem 5.5rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -1034,8 +1034,8 @@
         }
 
         .trusted-logo-item img {
-            max-height: 48px;
-            max-width: 190px;
+            max-height: 60px;
+            max-width: 220px;
             width: auto;
             object-fit: contain;
             opacity: 0.95;
@@ -1060,6 +1060,25 @@
                 max-height: 36px;
                 max-width: 140px;
             }
+        }
+
+        /* --- SECTION CENTERING UTILITY --- */
+        .section-center {
+            text-align: center;
+        }
+
+        .section-center .section-title,
+        .section-center .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-center .section-desc {
+            margin-bottom: 2.5rem;
+        }
+
+        .why-card {
+            text-align: left;
         }
     </style>
 </head>
@@ -1172,12 +1191,12 @@
     </section>
 
     <!-- WHY -->
-    <section id="why">
+    <section id="why" class="section-center">
         <p class="section-label reveal">Why Meet BOT at Summit?</p>
         <h2 class="section-title reveal reveal-d1">We're not building offshore teams.<br>We're building <span
                 style="color:var(--orange)">Databricks capability centers.</span></h2>
-        <p class="section-desc reveal reveal-d2">As Databricks partners move beyond traditional data engineering into
-            AI-led enterprise transformation, delivery models are changing fast. At BOT, we help high-growth Databricks
+        <p class="section-desc reveal reveal-d2">As Databricks accelerates toward Data Intelligence and Agentic AI,
+            we're helping firms build the capability required to keep pace. At BOT, we help high-growth Databricks
             partners scale globally aligned Data & AI teams through our Build–Operate–Transfer model.</p>
 
         <div class="why-grid">
@@ -1185,8 +1204,8 @@
                 <h3><span class="card-accent" style="background:var(--cyan)"></span>Talent at Speed</h3>
                 <p>Databricks-certified consultants built and deployed in weeks, not quarters. We don't poach your
                     competitors' engineers — we build a pipeline from scratch.</p>
-                <div class="card-stat"><span class="num">100+</span><span class="label">Databricks-certified consultants
-                        scaled for Hakkoda</span></div>
+                <div class="card-stat"><span class="num">25+</span><span class="label">Databricks certified
+                        consultants</span></div>
             </div>
             <div class="why-card reveal reveal-d1">
                 <h3><span class="card-accent" style="background:var(--orange)"></span>AI Labs, Not Just Engineers</h3>
@@ -1197,8 +1216,7 @@
             </div>
             <div class="why-card reveal reveal-d2">
                 <h3><span class="card-accent" style="background:var(--teal-mid)"></span>Culture That Sticks</h3>
-                <p>The Hakkoda India team is called "Hakkoda India" — not "the vendor." Culture is the moat, not the
-                    afterthought.</p>
+                <p>We build capability centers that feel like one team, one culture, and one mission.</p>
                 <div class="card-stat"><span class="num">90%</span><span class="label">voluntary retention vs. 75–80%
                         industry avg</span></div>
             </div>
@@ -1290,8 +1308,8 @@
     </section> -->
 
     <!-- HOSTS -->
-    <section id="hosts">
-        <p class="section-label reveal">Meet the Hosts</p>
+    <section id="hosts" class="section-center">
+        <p class="section-label reveal">Meet the Team</p>
         <h2 class="section-title reveal reveal-d1">The people behind the build.</h2>
         <div class="hosts-grid">
             <div class="host-card reveal">
@@ -1331,9 +1349,9 @@
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="section-label reveal">LET'S TALK</div>
-        <h2 class="section-title reveal d1" style="max-width:650px">Whether you're scaling a Databricks practice,
-            exploring AI-native delivery, or building a globally integrated data org — <span
-                style="color:var(--orange)">we'd love to connect.</span></h2>
+        <h2 class="section-title reveal d1" style="max-width:650px">Databricks is accelerating the future of Data and
+            AI. We're helping partners build the teams required to keep pace — <span style="color:var(--orange)">Let's
+                connect at DAIS.</span></h2>
         <p class="section-desc reveal d2">Book a time with our team at Databricks Data+AI Summit.</p>
         <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem" class="reveal d3">
             <a href="javascript:void(0)" onclick="openHubspotModal(event)" class="btn btn-primary">Meet
