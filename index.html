@@ -1157,14 +1157,17 @@
             font-size: clamp(1.6rem, 3.8vw, 2.4rem);
             font-weight: 800;
             line-height: 1.15;
-            color: var(--teal-dark);
+            background: linear-gradient(135deg, var(--teal-dark), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
         .coffee-connect-card .event-desc {
-            font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.8;
             color: var(--text);
             max-width: 850px;
             margin-bottom: 2rem;
@@ -1425,7 +1428,7 @@
             <div class="coffee-connect-inner">
                 <div class="event-label">EXCLUSIVE EVENT</div>
                 <h2>Coffee Connect with BOT & Auctor</h2>
-                <p class="event-desc">An informal gathering of Databricks partners, implementation leaders, and Data &
+                <p class="event-desc">An exclusive gathering of Databricks partners, implementation leaders, and Data &
                     AI operators navigating the same inflection point: how to scale AI delivery, build specialized
                     capability, and create repeatable implementation models in a market moving from experimentation to
                     production.</p>
@@ -1472,7 +1475,7 @@
                 </div>
 
                 <!-- AT THE TABLE -->
-                <div class="at-the-table-title">AT THE TABLE</div>
+                <div class="at-the-table-title">YOUR HOSTS</div>
                 <div class="table-hosts-grid">
                     <!-- Mitul Vyas -->
                     <a href="https://www.linkedin.com/in/mitul-vyas-40a9aa36/" target="_blank" rel="noopener noreferrer"
