@@ -1203,6 +1203,10 @@
             border-color: rgba(24, 57, 68, 0.22);
         }
 
+        a.cc-glass-card:hover h4 {
+            text-decoration: underline;
+        }
+
         .cc-glass-card .meta-label {
             font-size: 0.68rem;
             font-weight: 700;
@@ -1761,13 +1765,13 @@
                         <p>10:00 AM PT</p>
                     </div>
                     <!-- WHERE Card -->
-                    <div class="cc-glass-card">
+                    <a href="https://share.google/VySMJs3LKRbxgdrYy" target="_blank" rel="noopener noreferrer" class="cc-glass-card" style="text-decoration: none; display: block; color: inherit;">
                         <div class="meta-label">
                             <span>📍</span> WHERE
                         </div>
                         <h4>Paper Son Coffee</h4>
                         <p>303 2nd St N102, San Francisco, CA 94107</p>
-                    </div>
+                    </a>
                     <!-- HOSTED BY Card -->
                     <div class="cc-glass-card">
                         <div class="meta-label">
@@ -2146,18 +2150,6 @@
         const obs = new IntersectionObserver(e => { e.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); obs.unobserve(el.target) } }) }, { threshold: .08, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
         document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }) });
-
-        // Handle direct load of /coffee-connect path
-        if (window.location.pathname.endsWith('/coffee-connect') || window.location.pathname.endsWith('/coffee-connect/')) {
-            window.addEventListener('DOMContentLoaded', () => {
-                const target = document.getElementById('coffee-connect');
-                if (target) {
-                    setTimeout(() => {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 150);
-                }
-            });
-        }
         const coffeeConnectForm = document.getElementById('coffee-connect-form');
         const coffeeConnectFormCard = document.getElementById('coffee-connect-form-card');
         const coffeeConnectConfirmation = document.getElementById('coffee-connect-confirmation');
