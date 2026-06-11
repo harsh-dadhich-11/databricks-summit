@@ -1262,9 +1262,275 @@
             color: var(--text);
         }
 
-        /* RSVP Button */
+        /* Coffee Connect Form */
         .cc-btn-container {
             margin-bottom: 3rem;
+        }
+
+        .cc-inline-form-card {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(24, 57, 68, 0.1);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(24, 57, 68, 0.03);
+            transition: opacity 0.45s cubic-bezier(.16, 1, .3, 1), transform 0.45s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .cc-inline-form-card[hidden] {
+            display: none;
+        }
+
+        .cc-inline-form-card.is-exiting {
+            opacity: 0;
+            transform: translateY(18px) scale(0.985);
+            pointer-events: none;
+        }
+
+        .cc-inline-form-card.is-entering {
+            opacity: 0;
+            transform: translateY(18px) scale(0.985);
+        }
+
+        .cc-inline-form-card.is-entering.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .cc-form-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .cc-form-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--teal-dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .cc-form-copy {
+            font-size: 0.86rem;
+            line-height: 1.6;
+            color: var(--text-dim);
+        }
+
+        .cc-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.1rem;
+        }
+
+        .cc-form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .cc-form-field.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .cc-form-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--teal-mid);
+            letter-spacing: 0.03em;
+        }
+
+        .cc-form-label .required-mark {
+            color: var(--orange);
+        }
+
+        .cc-form-input {
+            width: 100%;
+            border: 1px solid rgba(24, 57, 68, 0.12);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.88);
+            color: var(--teal-dark);
+            padding: 0.9rem 1rem;
+            font: inherit;
+            box-shadow: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .cc-form-input::placeholder {
+            color: rgba(107, 114, 128, 0.8);
+        }
+
+        .cc-form-input:focus {
+            outline: none;
+            border-color: rgba(66, 195, 214, 0.85);
+            box-shadow: 0 0 0 4px rgba(66, 195, 214, 0.16);
+            background: var(--white);
+        }
+
+        .cc-form-input[aria-invalid="true"] {
+            border-color: rgba(241, 101, 34, 0.7);
+            box-shadow: 0 0 0 4px rgba(241, 101, 34, 0.12);
+        }
+
+        .cc-field-error {
+            min-height: 1rem;
+            font-size: 0.75rem;
+            line-height: 1.35;
+            color: #b45309;
+        }
+
+        .cc-honeypot {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .cc-form-status {
+            display: none;
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 12px;
+            font-size: 0.82rem;
+            line-height: 1.55;
+        }
+
+        .cc-form-status.is-visible {
+            display: block;
+        }
+
+        .cc-form-status.is-error {
+            background: rgba(241, 101, 34, 0.1);
+            border: 1px solid rgba(241, 101, 34, 0.18);
+            color: #9a3412;
+        }
+
+        .cc-form-status.is-success {
+            display: block;
+            background: rgba(66, 195, 214, 0.12);
+            border: 1px solid rgba(66, 195, 214, 0.2);
+            color: var(--teal-dark);
+        }
+
+        .cc-confirmation-card {
+            padding: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .cc-confirmation-shell {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .cc-confirmation-hero {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 0;
+            padding: clamp(1.25rem, 2.5vw, 1.75rem);
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(66, 195, 214, 0.12), rgba(255, 255, 255, 0.94));
+            border: 1px solid rgba(66, 195, 214, 0.18);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+        }
+
+        .cc-confirmation-copy {
+            max-width: 900px;
+        }
+
+        .cc-confirmation-kicker {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--teal-mid);
+            margin-bottom: 0.8rem;
+        }
+
+        .cc-confirmation-title {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 0.98;
+            color: var(--teal-dark);
+            letter-spacing: -0.05em;
+            margin: 0 0 1rem 0;
+        }
+
+        .cc-confirmation-lead {
+            font-size: clamp(1rem, 2vw, 1.12rem);
+            line-height: 1.7;
+            color: var(--text);
+            margin: 0;
+            max-width: 980px;
+        }
+
+        .cc-confirmation-panel {
+            padding: clamp(1.25rem, 2.2vw, 1.75rem);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.74);
+            border: 1px solid rgba(24, 57, 68, 0.08);
+            box-shadow: 0 10px 26px rgba(24, 57, 68, 0.04);
+        }
+
+        .cc-confirmation-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal-mid);
+            margin-bottom: 1.25rem;
+        }
+
+        .cc-confirmation-hosts {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .cc-confirmation-host {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(24, 57, 68, 0.08);
+            border-radius: 18px;
+            padding: 1.25rem 1.3rem;
+            box-shadow: 0 8px 18px rgba(24, 57, 68, 0.035);
+        }
+
+        .cc-confirmation-host strong {
+            display: block;
+            font-size: 0.95rem;
+            line-height: 1.35;
+            color: var(--teal-dark);
+            margin-bottom: 0.45rem;
+        }
+
+        .cc-confirmation-host span {
+            display: block;
+            font-size: 0.82rem;
+            line-height: 1.55;
+            color: var(--text-dim);
+        }
+
+        .cc-confirmation-footer {
+            font-size: 0.96rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin: 0;
+            padding: 0 0.1rem;
+        }
+
+        .cc-form-actions {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .cc-form-note {
+            font-size: 0.72rem;
+            line-height: 1.5;
+            color: var(--text-dim);
+            max-width: 520px;
         }
 
         .cc-rsvp-btn {
@@ -1282,6 +1548,7 @@
             transition: all 0.3s cubic-bezier(.16, 1, .3, 1);
             border: none;
             cursor: pointer;
+            min-height: 50px;
         }
 
         .cc-rsvp-btn:hover {
@@ -1289,6 +1556,56 @@
             box-shadow: 0 8px 20px rgba(24, 57, 68, 0.22);
             background: var(--teal);
             color: var(--white);
+        }
+
+        .cc-rsvp-btn:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(66, 195, 214, 0.18), 0 8px 20px rgba(24, 57, 68, 0.22);
+        }
+
+        .cc-rsvp-btn[disabled] {
+            opacity: 0.8;
+            cursor: progress;
+            transform: none;
+        }
+
+        @media (max-width: 768px) {
+            .cc-inline-form-card {
+                padding: 1.25rem;
+            }
+
+            .cc-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cc-form-field.full-width {
+                grid-column: auto;
+            }
+
+            .cc-form-actions {
+                align-items: stretch;
+            }
+
+            .cc-rsvp-btn {
+                width: 100%;
+            }
+
+            .cc-confirmation-card {
+                padding: 1.25rem;
+            }
+
+            .cc-confirmation-hero {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cc-confirmation-title {
+                font-size: 2.5rem;
+            }
+
+            .cc-confirmation-hosts {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* At the Table (Attendees/Hosts Grid) */
@@ -1468,10 +1785,93 @@
                         growth. Good coffee, practical insights, and peers navigating the same challenges.</p>
                 </div>
 
-                <!-- RSVP Button -->
+                <!-- Coffee Connect Form -->
                 <div class="cc-btn-container">
-                    <a href="https://calendar.app.google/9qywpffDfUewiKiy6" target="_blank" rel="noopener noreferrer"
-                        class="cc-rsvp-btn">Meet us for Coffee →</a>
+                    <div class="cc-inline-form-card" id="coffee-connect-form-card">
+                        <div class="cc-form-header">
+                            <p class="cc-form-title">Let's continue the conversation over coffee</p>
+                            <p class="cc-form-copy">Share your details and we'll follow up with the invite and venue
+                                confirmation.</p>
+                        </div>
+                        <form id="coffee-connect-form" novalidate>
+                            <div class="cc-honeypot" aria-hidden="true">
+                                <label for="coffee-website">Website</label>
+                                <input id="coffee-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="cc-form-grid">
+                                <div class="cc-form-field">
+                                    <label class="cc-form-label" for="coffee-firstname">First Name <span
+                                            class="required-mark">*</span></label>
+                                    <input class="cc-form-input" id="coffee-firstname" name="firstname" type="text"
+                                        autocomplete="given-name" required>
+                                    <div class="cc-field-error" id="coffee-firstname-error" aria-live="polite"></div>
+                                </div>
+                                <div class="cc-form-field">
+                                    <label class="cc-form-label" for="coffee-lastname">Last Name <span
+                                            class="required-mark">*</span></label>
+                                    <input class="cc-form-input" id="coffee-lastname" name="lastname" type="text"
+                                        autocomplete="family-name" required>
+                                    <div class="cc-field-error" id="coffee-lastname-error" aria-live="polite"></div>
+                                </div>
+                                <div class="cc-form-field">
+                                    <label class="cc-form-label" for="coffee-email">Work Email <span
+                                            class="required-mark">*</span></label>
+                                    <input class="cc-form-input" id="coffee-email" name="email" type="email"
+                                        inputmode="email" autocomplete="email" required>
+                                    <div class="cc-field-error" id="coffee-email-error" aria-live="polite"></div>
+                                </div>
+                                <div class="cc-form-field">
+                                    <label class="cc-form-label" for="coffee-company">Company <span
+                                            class="required-mark">*</span></label>
+                                    <input class="cc-form-input" id="coffee-company" name="company" type="text"
+                                        autocomplete="organization" required>
+                                    <div class="cc-field-error" id="coffee-company-error" aria-live="polite"></div>
+                                </div>
+                                <div class="cc-form-field full-width">
+                                    <label class="cc-form-label" for="coffee-jobtitle">Job Title <span
+                                            class="required-mark">*</span></label>
+                                    <input class="cc-form-input" id="coffee-jobtitle" name="jobtitle" type="text"
+                                        autocomplete="organization-title" required>
+                                    <div class="cc-field-error" id="coffee-jobtitle-error" aria-live="polite"></div>
+                                </div>
+                            </div>
+                            <div class="cc-form-actions">
+                                <button type="submit" class="cc-rsvp-btn">See you at DAIS</button>
+                            </div>
+                            <div class="cc-form-status" id="coffee-connect-form-status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                    <div class="cc-inline-form-card cc-confirmation-card" id="coffee-connect-confirmation" hidden>
+                        <div class="cc-confirmation-shell">
+                            <div class="cc-confirmation-hero">
+                                <div class="cc-confirmation-copy">
+                                    <div class="cc-confirmation-kicker">Coffee Connect Confirmed</div>
+                                    <h3 class="cc-confirmation-title">You're In ☕</h3>
+                                    <p class="cc-confirmation-lead">Thanks for registering for the BOT Consulting &
+                                        Auctor Coffee Connect. We'll send a calendar invitation along with the final
+                                        venue details shortly.</p>
+                                </div>
+                            </div>
+                            <div class="cc-confirmation-panel">
+                                <div class="cc-confirmation-label">In the meantime, feel free to connect with</div>
+                                <div class="cc-confirmation-hosts">
+                                    <div class="cc-confirmation-host">
+                                        <strong>Mitul Vyas</strong>
+                                        <span>Databricks Practice Leader, BOT Consulting</span>
+                                    </div>
+                                    <div class="cc-confirmation-host">
+                                        <strong>Greg Karelitz</strong>
+                                        <span>CRO, Auctor</span>
+                                    </div>
+                                    <div class="cc-confirmation-host">
+                                        <strong>Griffin Styne</strong>
+                                        <span>Founding GTM Lead, Auctor</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="cc-confirmation-footer">We look forward to meeting you in San Francisco.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- AT THE TABLE -->
@@ -1745,6 +2145,177 @@
         const obs = new IntersectionObserver(e => { e.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); obs.unobserve(el.target) } }) }, { threshold: .08, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
         document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }) });
+        const coffeeConnectForm = document.getElementById('coffee-connect-form');
+        const coffeeConnectFormCard = document.getElementById('coffee-connect-form-card');
+        const coffeeConnectConfirmation = document.getElementById('coffee-connect-confirmation');
+        const coffeeConnectFormStatus = document.getElementById('coffee-connect-form-status');
+
+        if (coffeeConnectForm && coffeeConnectFormCard && coffeeConnectConfirmation && coffeeConnectFormStatus) {
+            const coffeeConnectPortalId = '48825129';
+            const coffeeConnectFormId = '165ab9a3-23e6-4e75-94db-0e4b907bac12';
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const fieldRules = {
+                firstname: value => value.trim() ? '' : 'First name is required.',
+                lastname: value => value.trim() ? '' : 'Last name is required.',
+                email: value => {
+                    if (!value.trim()) return 'Work email is required.';
+                    return emailPattern.test(value.trim()) ? '' : 'Enter a valid work email address.';
+                },
+                company: value => value.trim() ? '' : 'Company is required.',
+                jobtitle: value => value.trim() ? '' : 'Job title is required.'
+            };
+
+            const getCookieValue = name => {
+                const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+                return match ? decodeURIComponent(match[1]) : '';
+            };
+
+            const setFormStatus = (message = '', type = '') => {
+                coffeeConnectFormStatus.textContent = message;
+                coffeeConnectFormStatus.className = 'cc-form-status';
+                if (!message) return;
+                coffeeConnectFormStatus.classList.add('is-visible');
+                if (type) coffeeConnectFormStatus.classList.add(`is-${type}`);
+            };
+
+            const showCoffeeConnectConfirmation = () => {
+                coffeeConnectFormCard.classList.add('is-exiting');
+
+                window.setTimeout(() => {
+                    coffeeConnectFormCard.hidden = true;
+                    coffeeConnectFormCard.classList.remove('is-exiting');
+
+                    coffeeConnectConfirmation.hidden = false;
+                    coffeeConnectConfirmation.classList.add('is-entering');
+
+                    requestAnimationFrame(() => {
+                        coffeeConnectConfirmation.classList.add('is-visible');
+                    });
+
+                    window.setTimeout(() => {
+                        coffeeConnectConfirmation.classList.remove('is-entering');
+                    }, 420);
+                }, 240);
+            };
+
+            const setFieldError = (field, message) => {
+                const input = coffeeConnectForm.elements[field];
+                const error = document.getElementById(`coffee-${field}-error`);
+                if (!input || !error) return;
+                input.setAttribute('aria-invalid', message ? 'true' : 'false');
+                error.textContent = message;
+            };
+
+            const validateField = field => {
+                const input = coffeeConnectForm.elements[field];
+                const validator = fieldRules[field];
+                if (!input || !validator) return '';
+                const message = validator(input.value);
+                setFieldError(field, message);
+                return message;
+            };
+
+            Object.keys(fieldRules).forEach(field => {
+                const input = coffeeConnectForm.elements[field];
+                if (!input) return;
+                input.addEventListener('input', () => validateField(field));
+                input.addEventListener('blur', () => validateField(field));
+            });
+
+            coffeeConnectForm.addEventListener('submit', async event => {
+                event.preventDefault();
+                setFormStatus();
+
+                if (coffeeConnectForm.elements.website && coffeeConnectForm.elements.website.value.trim()) {
+                    setFormStatus('Submission could not be completed. Please refresh the page and try again.', 'error');
+                    return;
+                }
+
+                const errors = Object.keys(fieldRules).map(validateField).filter(Boolean);
+                if (errors.length) return;
+
+                const submitButton = coffeeConnectForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton ? submitButton.textContent : '';
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                }
+
+                const context = {
+                    pageUri: window.location.href,
+                    pageName: document.title
+                };
+                const hutk = getCookieValue('hubspotutk');
+                if (hutk) {
+                    context.hutk = hutk;
+                }
+
+                const payload = {
+                    submittedAt: Date.now(),
+                    fields: [
+                        { name: 'firstname', value: coffeeConnectForm.elements.firstname.value.trim() },
+                        { name: 'lastname', value: coffeeConnectForm.elements.lastname.value.trim() },
+                        { name: 'email', value: coffeeConnectForm.elements.email.value.trim() },
+                        { name: 'company', value: coffeeConnectForm.elements.company.value.trim() },
+                        { name: 'jobtitle', value: coffeeConnectForm.elements.jobtitle.value.trim() }
+                    ],
+                    context
+                };
+
+                try {
+                    const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${coffeeConnectPortalId}/${coffeeConnectFormId}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        let errorMessage = `HubSpot submission failed with status ${response.status}`;
+                        try {
+                            const errorPayload = await response.json();
+                            console.error('Coffee Connect HubSpot error payload:', errorPayload);
+                            if (errorPayload?.errors?.length) {
+                                errorMessage = errorPayload.errors.map(item => item.message).filter(Boolean).join(' ');
+                            } else if (errorPayload?.message) {
+                                errorMessage = errorPayload.message;
+                            }
+                        } catch (parseError) {
+                            const errorText = await response.text();
+                            if (errorText) {
+                                console.error('Coffee Connect HubSpot error text:', errorText);
+                            }
+                        }
+                        throw new Error(errorMessage);
+                    }
+
+                    let successPayload = null;
+                    try {
+                        successPayload = await response.json();
+                    } catch (parseSuccessError) {
+                        successPayload = null;
+                    }
+                    console.log('Coffee Connect HubSpot submission succeeded:', {
+                        status: response.status,
+                        response: successPayload
+                    });
+
+                    coffeeConnectForm.reset();
+                    Object.keys(fieldRules).forEach(field => setFieldError(field, ''));
+                    setFormStatus();
+                    showCoffeeConnectConfirmation();
+                } catch (error) {
+                    console.error('Coffee Connect HubSpot submission failed:', error);
+                    setFormStatus(error.message || 'Something went wrong while submitting your details. Please try again.', 'error');
+                } finally {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                    }
+                }
+            });
+        }
     </script>
 </body>
 
